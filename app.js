@@ -13,6 +13,11 @@ const game = () => {
       match.classList.add("fadeIn");
     });
   };
+
+  // Sounds
+  const winSound = document.querySelector("#winSound");
+  const loseSound = document.querySelector("#loseSound");
+  const tieSound = document.querySelector("#tieSound");
   //Play Match
   const playMatch = () => {
     const options = document.querySelectorAll(".options button");
@@ -61,6 +66,7 @@ const game = () => {
     //Checking for a tie
     if (playerChoice === computerChoice) {
       winner.textContent = "It is a tie";
+      tieSound.play();
       return;
     }
     //Check for Rock
@@ -69,11 +75,13 @@ const game = () => {
         winner.textContent = "Player Wins";
         pScore++;
         updateScore();
+        winSound.play();
         return;
       } else {
         winner.textContent = "Computer Wins";
         cScore++;
         updateScore();
+        loseSound.play();
         return;
       }
     }
@@ -83,11 +91,13 @@ const game = () => {
         winner.textContent = "Computer Wins";
         cScore++;
         updateScore();
+        loseSound.play();
         return;
       } else {
         winner.textContent = "Player Wins";
         pScore++;
         updateScore();
+        winSound.play();
         return;
       }
     }
@@ -97,11 +107,13 @@ const game = () => {
         winner.textContent = "Computer Wins";
         cScore++;
         updateScore();
+        loseSound.play();
         return;
       } else {
         winner.textContent = "Player Wins";
         pScore++;
         updateScore();
+        winSound.play();
         return;
       }
     }
