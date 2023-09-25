@@ -86,6 +86,45 @@ div.fadeIn {
   pointer-events: all;
 }
 
+.selected .player-hand {
+  fill: #ff5733; /* Change to your desired color */
+  animation: colorChange 1s infinite alternate;
+}
+
+@keyframes colorChange {
+  0% {
+    fill: #fff; /* Original color */
+  }
+  100% {
+    fill: #ff5733; /* Target color */
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.options button {
+  transition: opacity 0.5s ease;
+}
+
+.options button.selected {
+  opacity: 0.5; /* Adjust the opacity value as needed */
+}
+
 @keyframes shakePlayer {
   0% {
     transform: rotateY(180deg) translateY(0px);
